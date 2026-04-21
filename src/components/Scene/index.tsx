@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import * as THREE from 'three'
 import type { ReactNode } from 'react'
 import CameraControls from './CameraControls'
+import Room from '@/components/Room'
 
 interface SceneProps {
   children?: ReactNode
@@ -21,11 +22,10 @@ export default function Scene({ children }: SceneProps) {
     >
       <CameraControls />
 
-      <ambientLight intensity={0.5} />
-      <mesh position={[0, 1.6, -3]}>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color="#4a90d9" />
-      </mesh>
+      {/* Temporary ambient light — definitive lighting arrives in PR-03 */}
+      <ambientLight intensity={0.4} />
+
+      <Room />
 
       {children}
     </Canvas>
