@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 import CameraControls from './CameraControls'
 import Room from '@/components/Room'
 import DayNightCycle from '@/components/DayNightCycle'
+import PostProcessing from '@/components/PostProcessing'
 
 interface SceneProps {
   children?: ReactNode
@@ -24,6 +25,7 @@ export default function Scene({ children }: SceneProps) {
       <CameraControls />
       <DayNightCycle />
       <Room />
+      <PostProcessing />
       {children}
     </Canvas>
   )
