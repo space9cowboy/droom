@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import type { ReactNode } from 'react'
 import CameraControls from './CameraControls'
 import Room from '@/components/Room'
+import DayNightCycle from '@/components/DayNightCycle'
 
 interface SceneProps {
   children?: ReactNode
@@ -21,12 +22,8 @@ export default function Scene({ children }: SceneProps) {
       style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh' }}
     >
       <CameraControls />
-
-      {/* Temporary ambient light — definitive lighting arrives in PR-03 */}
-      <ambientLight intensity={0.4} />
-
+      <DayNightCycle />
       <Room />
-
       {children}
     </Canvas>
   )
