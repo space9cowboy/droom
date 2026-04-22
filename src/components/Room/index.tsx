@@ -13,11 +13,10 @@ function RoomModel() {
       node.castShadow = true
       node.receiveShadow = true
 
-      // Room geometry faces inward — use BackSide so normals render correctly
       const mats = Array.isArray(node.material) ? node.material : [node.material]
       mats.forEach((mat) => {
-        if (mat instanceof THREE.MeshStandardMaterial) {
-          mat.side = THREE.BackSide
+        if (mat instanceof THREE.Material) {
+          mat.side = THREE.DoubleSide
         }
       })
     })

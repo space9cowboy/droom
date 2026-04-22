@@ -1,4 +1,16 @@
-// placeholder — day/night lighting will be implemented in subsequent PRs
+import { useDayNight } from '@/hooks/useDayNight'
+import DayLights from './DayLights'
+import NightLights from './NightLights'
+import SkyBox from './SkyBox'
+
 export default function DayNightCycle() {
-  return null
+  const { progressRef } = useDayNight()
+
+  return (
+    <>
+      <SkyBox progressRef={progressRef} />
+      <DayLights progressRef={progressRef} />
+      <NightLights progressRef={progressRef} />
+    </>
+  )
 }

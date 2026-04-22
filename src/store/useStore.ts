@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-interface StoreState {
+export interface StoreState {
   isPlaying: boolean
   timeOfDay: 'day' | 'night'
   activeZone: string | null
